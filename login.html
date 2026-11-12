@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Euphoria+Script&display=swap" rel="stylesheet">
+    <title>Login - Pat's Educare Centre</title>
+    <style>
+        .auth-container {
+            max-width: 420px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #ffffff;
+            border: 2px solid #ff0000;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        .auth-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2d3472;
+        }
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .auth-form input {
+            padding: 12px;
+            border: 2px solid #ff0000;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        .auth-form input:focus {
+            outline: none;
+            border-color: #ff0000;
+            box-shadow: 0 0 5px rgba(255, 107, 157, 0.2);
+        }
+        .auth-form button {
+            padding: 12px;
+            background: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .auth-form button:hover {
+            background: #cc0000;
+        }
+        .auth-form button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .toggle-form {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+        .toggle-form button {
+            background: none;
+            border: none;
+            color: #ff0000;
+            cursor: pointer;
+            text-decoration: underline;
+            font-size: 14px;
+            padding: 0;
+        }
+        .toggle-form button:hover {
+            color: #cc0000;
+        }
+        .auth-message {
+            padding: 12px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+            margin-bottom: 15px;
+        }
+        .auth-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            display: block;
+        }
+        .auth-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+        .hidden {
+            display: none !important;
+        }
+        .login-page {
+            padding-top: 170px;
+            padding-bottom: 40px;
+        }
+        .auth-container {
+            margin: 0 auto 40px;
+        }
+        .forgot-password {
+            text-align: right;
+            margin-top: -5px;
+        }
+        .forgot-password a {
+            color: #ff0000;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <img src="Logo.png" alt="Logo" class="logo">
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <a href="login.html" class="login-btn">Login</a>
+</header>
+
+<div class="login-page">
+<div class="auth-container">
+    <!-- Login Form -->
+    <div id="loginForm">
+        <h2>Login to Your Account</h2>
+        <div class="auth-message" id="loginMessage"></div>
+        <form class="auth-form" id="loginFormElement">
+            <input type="email" id="loginEmail" placeholder="Email Address" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <div class="forgot-password">
+                <a href="#" onclick="forgotPassword(); return false;">Forgot Password?</a>
+            </div>
+            <button type="submit" id="loginBtn">Login</button>
+        </form>
+        <div class="toggle-form">
+            Don't have an account? 
+            <button onclick="toggleForms()">Sign Up</button>
+        </div>
+    </div>
+
+    <!-- Sign Up Form -->
+    <div id="signupForm" class="hidden">
+        <h2>Create Your Account</h2>
+        <div class="auth-message" id="signupMessage"></div>
+        <form class="auth-form" id="signupFormElement">
+            <input type="email" id="signupEmail" placeholder="Email Address" required>
+            <input type="password" id="signupPassword" placeholder="Password (min 8 characters)" required>
+            <input type="password" id="signupConfirmPassword" placeholder="Confirm Password" required>
+            <button type="submit" id="signupBtn">Sign Up</button>
+        </form>
+        <div class="toggle-form">
+            Already have an account? 
+            <button onclick="toggleForms()">Login</button>
+        </div>
+    </div>
+
+    <!-- Reset Password Form (only shown when the user arrives via the password-reset email link) -->
+    <div id="resetPasswordForm" class="hidden">
+        <h2>Set a New Password</h2>
+        <div class="auth-message" id="resetMessage"></div>
+        <form class="auth-form" id="resetPasswordFormElement">
+            <input type="password" id="newPassword" placeholder="New Password (min 8 characters)" required>
+            <input type="password" id="confirmNewPassword" placeholder="Confirm New Password" required>
+            <button type="submit" id="resetBtn">Update Password</button>
+        </form>
+    </div>
+</div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <p>&copy; Pat's Educare Centre EST 2011. All rights reserved.</p>
+        <div class="footer-social">
+            <a href="https://www.google.co.za/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjEgpm62IyWAxWidUEAHQ5rKvgQFnoECDcQAQ&url=https%3A%2F%2Fwww.facebook.com%2Fp%2FPats-Educare-Centre-100063535934973%2F&usg=AOvVaw3ejUofNITjRzR8nJMrM7rK&opi=89978449" target="_blank" rel="noopener noreferrer" class="footer-social-icon">
+                <img src="facebook-icon.png" alt="Facebook">
+            </a>
+            <a href="https://www.google.co.za/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjEgpm62IyWAxWidUEAHQ5rKvgQFnoECDUQAQ&url=https%3A%2F%2Fwww.instagram.com%2Fpats_educare_centre%2F&usg=AOvVaw3Saug7lTCyFdw1YjN0T6Bc&opi=89978449" target="_blank" rel="noopener noreferrer" class="footer-social-icon">
+                <img src="instagram-icon.png" alt="Instagram">
+            </a>
+            <a href="https://www.bing.com/ck/a?!&&p=7794f3f14f015d90f59ab6d2d7438ad45f164be7c04198d372e8e7893a26dc6dJmltdHM9MTc4NzcwMjQwMA&ptn=3&ver=2&hsh=4&fclid=20c8be0a-1abc-6632-1ed8-ab851b5567c9&psq=pats+educare+centre+tiktok&u=a1aHR0cHM6Ly93d3cudGlrdG9rLmNvbS9AcGF0c2VkdWNhcmVjZW50cmU&ntb=1" target="_blank" rel="noopener noreferrer" class="footer-social-icon">
+                <img src="tiktok-icon.png" alt="TikTok">
+            </a>
+        </div>
+        <div class="footer-links">
+            <a href="terms.html" class="footer-link">Terms & Conditions</a>
+            <a href="privacy.html" class="footer-link">Privacy Policy</a>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script type="module" src="js/auth.js"></script>
+</body>
+</html>

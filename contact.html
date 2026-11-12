@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Euphoria+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Contact - Pat's Educare Centre</title>
+    <style>
+        .form-message {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        .form-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            display: block;
+        }
+        .form-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+        .form-loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .faq-section {
+            margin-top: 50px;
+            text-align: left;
+        }
+        .faq-item {
+            background: #fff;
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+            padding: 18px 25px;
+            margin-bottom: 15px;
+        }
+        .faq-item summary {
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 18px;
+            color: #2d3472;
+        }
+        .faq-item p, .faq-item ul {
+            color: #555;
+            line-height: 1.6;
+            margin: 12px 0;
+        }
+        .faq-label {
+            color: #ff0000;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .faq-title {
+            color: #2d3472;
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <img src="Logo.png" alt="Logo" class="logo">
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <a href="login.html" class="login-btn">Login</a>
+</header>
+
+<div class="hero-wrapper">
+    <div class="hero-content">
+        <h3>Contact Us</h3>
+    </div>
+</div>
+
+<main>
+    <section class="contact">
+        <h4>Contact Us</h4>
+        <h1>Contact For Any Query</h1>
+        <p class="subtitle">We'd love to hear from you! Fill in the form below and we'll get back to you as soon as possible.</p>
+
+        <div class="contact-info">
+            <div class="box">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                    <h3>Address</h3>
+                    <p>60 Barbados Way Mitchells Plain Cape Town 7785</p>
+                    <p>Victoria Park, Somerset west 7130</p>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                    <h3>Contact Details</h3>
+                    <p>patseducare11@outlook.com</p>
+                    <p>(+27) 72 477 0809 (admin)</p>
+                    <p>(+27) 73 571 4877</p>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                    <h3>Business Hours</h3>
+                    <p>Monday - Thursday: 6:30 AM - 16:30 PM</p>
+                    <p>Friday: 6:30 AM - 15:00 PM</p>
+                    <p>Saturday - Sunday: Closed</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-container">
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Enter Your Email" required>
+                <textarea id="message" placeholder="Your Message" required></textarea>
+                <button type="submit" id="submitBtn">Submit</button>
+                <div class="form-message" id="formMessage"></div>
+            </form>
+            <div class="map">
+                <img src="newmap.png" alt="Map">
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h3 class="faq-label">Feedback and Questions</h3>
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+
+            <details class="faq-item">
+                <summary>What are the enrolment fees?</summary>
+                <p>For the 2026 academic year, we offer two options for children aged 1-5 years:</p>
+                <ul>
+                    <li><strong>Option 1:</strong> R2300 per month - includes 2 school meals daily.</li>
+                    <li><strong>Option 2:</strong> R2100 per month - includes school breakfast (parents supply lunch and snacks).</li>
+                </ul>
+                <p>Both options include care and educational stimulation following the NCF and Montessori curriculum, toys, equipment and 1 educational excursion. See our full Fee Structure on the Services page for more detail.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Till what time is the educare open?</summary>
+                <p>Monday - Thursday: 6:30 AM - 4:30 PM.</p>
+                <p>Friday: 6:30 AM - 3:00 PM.</p>
+                <p>Aftercare is available at an additional cost. We are open during school holidays (except December).</p>
+                <p>We are closed on public and special holidays.</p>
+            </details>
+
+            <details class="faq-item"><summary>What ages do you take?</summary>
+                <p>We care for and teach children aged 1 to 5 years.</p></details>
+            <details class="faq-item"><summary>Which meals are provided?</summary>
+                <p>Option 1 includes two school meals daily. Option 2 includes school breakfast, and parents supply lunch and snacks. Daily snacks at 10:00 (fruit, yogurt, water) and 14:00 (sandwich, juice, chips or mini cheddar biscuits) are part of our schedule.</p></details>
+            <details class="faq-item"><summary>Do you offer aftercare, transport and extramurals?</summary>
+                <p>Yes. Aftercare and scholar transport are available at an additional cost, and children can take part in on-site swimming, martial arts, speech and drama and Actionball.</p></details>
+            <details class="faq-item"><summary>Are you open during school holidays?</summary>
+                <p>We are open during school holidays except December, and closed on public and special holidays.</p></details>
+            <details class="faq-item"><summary>How is my child kept safe?</summary>
+                <p>We use CCTV cameras, controlled classrooms and secure play areas, and keep classes small so educators know every child well.</p></details>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-container">
+        <p>&copy; Pat's Educare Centre EST 2011. All rights reserved.</p>
+        <div class="footer-social">
+            <a href="https://www.google.co.za/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjEgpm62IyWAxWidUEAHQ5rKvgQFnoECDcQAQ&url=https%3A%2F%2Fwww.facebook.com%2Fp%2FPats-Educare-Centre-100063535934973%2F&usg=AOvVaw3ejUofNITjRzR8nJMrM7rK&opi=89978449" target="_blank" rel="noopener noreferrer" class="footer-social-icon">
+                <img src="facebook-icon.png" alt="Facebook">
+            </a>
+            <a href="https://www.google.co.za/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjEgpm62IyWAxWidUEAHQ5rKvgQFnoECDUQAQ&url=https%3A%2F%2Fwww.instagram.com%2Fpats_educare_centre%2F&usg=AOvVaw3Saug7lTCyFdw1YjN0T6Bc&opi=89978449" target="_blank" rel="noopener noreferrer" class="footer-social-icon">
+                <img src="instagram-icon.png" alt="Instagram">
+            </a>
+            <a href="https://www.bing.com/ck/a?!&&p=7794f3f14f015d90f59ab6d2d7438ad45f164be7c04198d372e8e7893a26dc6dJmltdHM9MTc4NzcwMjQwMA&ptn=3&ver=2&hsh=4&fclid=20c8be0a-1abc-6632-1ed8-ab851b5567c9&psq=pats+educare+centre+tiktok&u=a1aHR0cHM6Ly93d3cudGlrdG9rLmNvbS9AcGF0c2VkdWNhcmVjZW50cmU&ntb=1" target="_blank" rel="noopener noreferrer" class="footer-social-icon">
+                <img src="tiktok-icon.png" alt="TikTok">
+            </a>
+        </div>
+        <div class="footer-links">
+            <a href="terms.html" class="footer-link">Terms & Conditions</a>
+            <a href="privacy.html" class="footer-link">Privacy Policy</a>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script type="module" src="js/contact.js"></script>
+</body>
+</html>
